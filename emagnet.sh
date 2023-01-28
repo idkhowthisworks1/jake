@@ -6,16 +6,15 @@
 #      FileName: emagnet.sh
 #       Version: v3.4.3
 #
-#       Created: 2018-XX-XX (XX:XX:XX)
-#      Modified: 2022-05-11 (02:42:25)
+#       Created: 2018   
+#      Modified: 2023-01-28 (19:45:25)
 #
 #           iRC: wuseman (Libera/EFnet/LinkNet) 
-#       Website: https://www.nr1.nu/
 #        GitHub: https://github.com/wuseman/
 #
 # - LiCENSE --------------------------------------------------------------------------
 #
-#      Copyright (C) 2021, wuseman                                     
+#      Copyright (C) 2023, wuseman                                     
 #                                                                       
 #      This program is free software; you can redistribute it and/or modify 
 #      it under the terms of the GNU General Public License as published by 
@@ -37,7 +36,7 @@
 #      You should have received a copy of the GNU General Public License
 #      along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
-# - End of Header ----------------------------------------------------------------
+# - End of Header --------------------------------------------------------------------
 
 EMAGNET_HOME="$HOME/.config/emagnet"
 EMAGNET_CONF="$HOME/.config/emagnet/emagnet.conf"
@@ -112,7 +111,7 @@ emagnet_mustberoot() {
 emagnet_license(){
     printf "%s\n" "Printing LICENSE - Use 'q' to quit"
     sleep 2
-    curl -sL "https://nr1.nu/emagnet/emagnet_license.md"|less
+    curl -sL "https://raw.githubusercontent.com/wuseman/EMAGNET/master/LICENSE.md"|less
     printf "%s\n" "Thank you.." 
 }
 
@@ -183,7 +182,6 @@ emagnet_move_realtime() {
     mv $EMAGNETTEMP/* $EMAGNETHOME/all-files &> /dev/null
     rm "$HOME/.config/emagnet/tmp/.emagnet-*"  &> /dev/null
 }
-
 
 emagnet_check_pastebin() {
     source $HOME/.config/emagnet/emagnet.conf
@@ -843,7 +841,7 @@ emagnet_run4ever() {
         emagnet_conf                         # Source emagnet-conf so we know all settings for emagnet
         emagnet_first_run
         emagnet_paths
-        emagnet_iconnection                  # Check if we got internet, otherwise we stop
+        # emagnet_iconnection                  # Check if we got internet, otherwise we stop
         emagnet_version
         emagnet_check_pastebin               # Check if everything ARE ok and if we are allowed to visit pastebin before we doing anything
         emagnet_clear
@@ -917,7 +915,6 @@ case "${1}" in
 
     "emagnet"|"-e"|"-emagnet"|"--emagnet")
         emagnet_conf          
-        emagnet_iconnection
         emagnet_first_run
         emagnet_required_tools
         emagnet_distro
