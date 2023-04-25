@@ -46,7 +46,7 @@ CURRENT_VERSION=3.4.3
 emagnet_author() {
     cat << "EOF"
 
- Copyright (C) 2018-2022, wuseman
+ Copyright (C) 2018-2023, wuseman
 
  Emagnet was founded in 2015 and was released as open source
  on github.com/wuseman/emagnet in January 2018 and is licensed
