@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <channel>
+    
+    <title>EMAGNET</title>
+    <description>Emagnet is a very powerful tool for capturing email addresses and passwords from leaked databases uploaded on Pastebin. It&#39;s almost impossible to find leaked passwords after they&#39;re removed from the list on pastebin.com.</description>
+    <link>https://emagnet.nr1.nu/</link>
+    <atom:link href="https://emagnet.nr1.nu/feed_rss_created.xml" rel="self" type="application/rss+xml" />
+
+    
+    
+    <docs>https://github.com/wuseman/EMAGNET</docs>
+    <language>en</language>
+
+    
+    <pubDate>Sun, 30 Apr 2023 21:11:05 -0000</pubDate>
+    <lastBuildDate>Sun, 30 Apr 2023 21:11:05 -0000</lastBuildDate>
+    <ttl>1440</ttl>
+
+    
+    <generator>MkDocs RSS plugin - v1.6.0</generator>
+
+    
+    
+    <image>
+      <url>https://upload.wikimedia.org/wikipedia/commons/thumb/4/43/Feed-icon.svg/128px-Feed-icon.svg.png</url>
+      <title>EMAGNET</title>
+      <link>https://emagnet.nr1.nu/</link>
+    </image>
+    
+
+    
+    
+  </channel>
+</rss>

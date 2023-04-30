@@ -1,0 +1,1718 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Emagnet is a very powerful tool for capturing email addresses and passwords from leaked databases uploaded on Pastebin. It's almost impossible to find leaked passwords after they're removed from the list on pastebin.com.">
+      
+      
+      
+        <link rel="canonical" href="https://emagnet.nr1.nu/install/">
+      
+      
+      
+      
+        
+      
+      
+        <link rel="alternate" type="application/rss+xml" title="RSS feed" href="../feed_rss_created.xml">
+        <link rel="alternate" type="application/rss+xml" title="RSS feed of updated content" href="../feed_rss_updated.xml">
+      
+      <link rel="icon" href="../favicon.png">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.0.11+insiders-4.30.0">
+    
+    
+      
+        <title>How to get VPN running with emagnet.. - EMAGNET</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.b6d2c4d8.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.2505c338.min.css">
+      
+      
+
+  
+  
+    
+    
+      
+    
+    
+  
+    
+    
+      
+    
+    
+  
+    
+    
+      
+    
+    
+  
+  
+  <style>.md-tag--html{--md-tag-icon:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="m0 32 34.9 395.8L191.5 480l157.6-52.2L384 32H0zm308.2 127.9H124.4l4.1 49.4h175.6l-13.6 148.4-97.9 27v.3h-1.1l-98.7-27.3-6-75.8h47.7L138 320l53.5 14.5 53.7-14.5 6-62.2H84.3L71.5 112.2h241.1l-4.4 47.7z"/></svg>');}.md-tag--js{--md-tag-icon:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M0 32v448h448V32H0zm243.8 349.4c0 43.6-25.6 63.5-62.9 63.5-33.7 0-53.2-17.4-63.2-38.5l34.3-20.7c6.6 11.7 12.6 21.6 27.1 21.6 13.8 0 22.6-5.4 22.6-26.5V237.7h42.1v143.7zm99.6 63.5c-39.1 0-64.4-18.6-76.7-43l34.3-19.8c9 14.7 20.8 25.6 41.5 25.6 17.4 0 28.6-8.7 28.6-20.8 0-14.4-11.4-19.5-30.7-28l-10.5-4.5c-30.4-12.9-50.5-29.2-50.5-63.5 0-31.6 24.1-55.6 61.6-55.6 26.8 0 46 9.3 59.8 33.7L368 290c-7.2-12.9-15-18-27.1-18-12.3 0-20.1 7.8-20.1 18 0 12.6 7.8 17.7 25.9 25.6l10.5 4.5c35.8 15.3 55.9 31 55.9 66.2 0 37.8-29.8 58.6-69.7 58.6z"/></svg>');}.md-tag--css{--md-tag-icon:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="m480 32-64 368-223.3 80L0 400l19.6-94.8h82l-8 40.6L210 390.2l134.1-44.4 18.8-97.1H29.5l16-82h333.7l10.5-52.7H56.3l16.3-82H480z"/></svg>');}</style>
+
+    
+    
+<script>
+var gtmId = 'GT-PLW5V7C';
+if (typeof window !== 'undefined' && window.location.href.includes('127.0.0.1')) {
+  gtmId = 'GT-PLW5V7C'
+}
+(function(w,d,s,l,i){
+  w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer', gtmId);
+</script>
+
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../css/timeago.css">
+    
+      <link rel="stylesheet" href="../assets/stylesheets/wuseman.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  
+
+
+  
+  
+
+
+  <script id="__analytics">function __md_analytics(){function n(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],n("js",new Date),n("config","G-TLE0MX9GXS"),document.addEventListener("DOMContentLoaded",function(){document.forms.search&&document.forms.search.query.addEventListener("blur",function(){this.value&&n("event","search",{search_term:this.value})}),document$.subscribe(function(){var a=document.forms.feedback;if(void 0!==a)for(var e of a.querySelectorAll("[type=submit]"))e.addEventListener("click",function(e){e.preventDefault();var t=document.location.pathname,e=this.getAttribute("data-md-value");n("event","feedback",{page:t,data:e}),a.firstElementChild.disabled=!0;e=a.querySelector(".md-feedback__note [data-md-value='"+e+"']");e&&(e.hidden=!1)}),a.hidden=!1}),location$.subscribe(function(e){n("config","G-TLE0MX9GXS",{page_path:e.pathname})})});var e=document.createElement("script");e.async=!0,e.src="https://www.googletagmanager.com/gtag/js?id=G-TLE0MX9GXS",document.getElementById("__analytics").insertAdjacentElement("afterEnd",e)}</script>
+
+  
+    <script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
+  
+
+    
+    
+      
+        <meta  property="og:type"  content="website" >
+      
+        <meta  property="og:title"  content="Index - EMAGNET" >
+      
+        <meta  property="og:description"  content="Emagnet is a very powerful tool for capturing email addresses and passwords from leaked databases uploaded on Pastebin. It's almost impossible to find leaked passwords after they're removed from the list on pastebin.com." >
+      
+        <meta  property="og:image"  content="https://emagnet.nr1.nu/assets/images/social/install/index.png" >
+      
+        <meta  property="og:image:type"  content="image/png" >
+      
+        <meta  property="og:image:width"  content="1200" >
+      
+        <meta  property="og:image:height"  content="630" >
+      
+        <meta  property="og:url"  content="https://emagnet.nr1.nu/install/" >
+      
+        <meta  name="twitter:card"  content="summary_large_image" >
+      
+        <meta  name="twitter:title"  content="Index - EMAGNET" >
+      
+        <meta  name="twitter:description"  content="Emagnet is a very powerful tool for capturing email addresses and passwords from leaked databases uploaded on Pastebin. It's almost impossible to find leaked passwords after they're removed from the list on pastebin.com." >
+      
+        <meta  name="twitter:image"  content="https://emagnet.nr1.nu/assets/images/social/install/index.png" >
+      
+    
+  
+  
+    <meta property="robots" content="index, follow" />
+  
+  
+<script>
+  var _paq = window._paq = window._paq || [];
+  /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="//stats.nr1.nu/";
+    _paq.push(['setTrackerUrl', u+'matomo.php']);
+    _paq.push(['setSiteId', '2']);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="dracula" data-md-color-primary="deep-purple" data-md-color-accent="deep-purple">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#install-emagnet-on-windows-10" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+        <aside class="md-banner">
+          <div class="md-banner__inner md-grid md-typeset">
+            
+              <button class="md-banner__button md-icon" aria-label="Don't show this again">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+              </button>
+                    <span class="twemoji heart-throb-hover">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M7.655 14.916v-.001h-.002l-.006-.003-.018-.01a22.066 22.066 0 0 1-3.744-2.584C2.045 10.731 0 8.35 0 5.5 0 2.836 2.086 1 4.25 1 5.797 1 7.153 1.802 8 3.02 8.847 1.802 10.203 1 11.75 1 13.914 1 16 2.836 16 5.5c0 2.85-2.044 5.231-3.886 6.818a22.094 22.094 0 0 1-3.433 2.414 7.152 7.152 0 0 1-.31.17l-.018.01-.008.004a.75.75 0 0 1-.69 0Z"/></svg>
+      </span>
+            
+            
+  <style>.md-announce a,.md-announce a:focus,.md-announce a:hover{color:currentColor}.md-announce strong{white-space:nowrap}.md-announce .twitter{margin-left:.2em;color:#00acee}</style>
+    <a href="https://emagnet.nr1.nu/blog"><strong>New website for EMAGNET has landed!</strong>
+
+    </a>
+
+          </div>
+          
+            <script>var content,el=document.querySelector("[data-md-component=announce]");el&&(content=el.querySelector(".md-typeset"),__md_hash(content.innerHTML)===__md_get("__announce")&&(el.hidden=!0))</script>
+          
+        </aside>
+      
+    </div>
+    
+      <div data-md-component="outdated" hidden>
+        
+      </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="EMAGNET" class="md-header__button md-logo" aria-label="EMAGNET" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 89 89">
+  <path d="M3.136,17.387l0,42.932l42.932,21.467l-42.932,-64.399Z" />
+  <path d="M21.91,8l42.933,64.398l-18.775,9.388l-42.932,-64.399l18.774,-9.387Z" style="fill-opacity: 0.5" />
+  <path d="M67.535,17.387l-27.262,18.156l21.878,32.818l5.384,2.691l0,-53.665Z" />
+  <path d="M67.535,17.387l0,53.666l18.774,-9.388l0,-53.665l-18.774,9.387Z" style="fill-opacity: 0.25" />
+</svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            EMAGNET
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              How to get VPN running with emagnet..
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7 0-.24-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91 1.61 0 2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08Z"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/wuseman/EMAGNET" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    EMAGNET
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../emagnet/" class="md-tabs__link">
+          
+  
+    
+  
+  Home
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../blog/" class="md-tabs__link">
+          
+  
+    
+  
+  Blog
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../breaches/" class="md-tabs__link">
+        
+  
+    
+  
+  Data Breaches
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../about/" class="md-tabs__link">
+        
+  
+    
+  
+  History
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../license/" class="md-tabs__link">
+        
+  
+    
+  
+  License
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../tips/" class="md-tabs__link">
+        
+  
+    
+  
+  Tips & Tricks
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="EMAGNET" class="md-nav__button md-logo" aria-label="EMAGNET" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 89 89">
+  <path d="M3.136,17.387l0,42.932l42.932,21.467l-42.932,-64.399Z" />
+  <path d="M21.91,8l42.933,64.398l-18.775,9.388l-42.932,-64.399l18.774,-9.387Z" style="fill-opacity: 0.5" />
+  <path d="M67.535,17.387l-27.262,18.156l21.878,32.818l5.384,2.691l0,-53.665Z" />
+  <path d="M67.535,17.387l0,53.666l18.774,-9.388l0,-53.665l-18.774,9.387Z" style="fill-opacity: 0.25" />
+</svg>
+
+    </a>
+    EMAGNET
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/wuseman/EMAGNET" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    EMAGNET
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" >
+        
+          <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Home
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../emagnet/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../blog/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    
+  
+    Blog
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              <label class="md-nav__link " for="__nav_2">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Blog
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
+        
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    
+  
+    Archive
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Archive
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../blog/archive/2023/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    <span class="md-typeset">
+      2023
+    </span>
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" >
+        
+          <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    
+  
+    Categories
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Categories
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../blog/category/automated/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    <span class="md-typeset">
+      Automated
+    </span>
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../blog/category/breaches/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    <span class="md-typeset">
+      Breaches
+    </span>
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../blog/category/bruteforce/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    <span class="md-typeset">
+      Bruteforce
+    </span>
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../blog/category/cracking/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    <span class="md-typeset">
+      Cracking
+    </span>
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../blog/category/hacking/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    <span class="md-typeset">
+      Hacking
+    </span>
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../breaches/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    Data Breaches
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../about/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    History
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../license/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    License
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tips/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    Tips & Tricks
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#install-emagnet-on-windows-10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Install Emagnet on Windows 10
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#get-started-on-linux" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Get started on Linux;
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Get started on Linux;">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#you-can-copy-and-paste-below-code-in-your-shell" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          You can copy and paste below code in your shell
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#get-started-on-macosx" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          GET STARTED ON MACOSX
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="GET STARTED ON MACOSX">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#you-can-copy-and-paste-below-code-in-your-shell_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          You can copy and paste below code in your shell
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#get-started-on-android" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          GET STARTED ON ANDROID:
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#getting-started-with-emagnet-spam-its-not-a-spamming-feature-just-baptized-it-that-way" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Getting started with emagnet 'spam' - (It's not a spamming feature - Just baptized it that way)
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Getting started with emagnet 'spam' - (It's not a spamming feature - Just baptized it that way)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#how-to-get-started" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          How to get started:
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="How to get started:">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#gentoo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Gentoo
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#debianubuntukalimint-and-other-apt-distros" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Debian/Ubuntu/Kali/Mint and other apt distros:
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#let-me-show-you-an-example-for-gmail" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Let me show you an example for gmail:
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-get-started-with-brute-forcer-for-spotify" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          How to get started with brute forcer for spotify:
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="How to get started with brute forcer for spotify:">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#on-gnulinux-gentoo-wich-is-the-supported-distro-for-emagnet-just-do-as-following" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          On GNU/Linux Gentoo wich is the supported distro for emagnet, just do as following:
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#on-ubuntukalidebian" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          On Ubuntu/Kali/Debian:
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-get-vpn-running-with-emagnet" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          How to get VPN running with emagnet..
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#a-quick-sample-script-for-getting-started-with-a-script-running-beside-emagnet" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          A quick sample script for getting started with a script running beside emagnet:
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="A quick sample script for getting started with a script running beside emagnet:">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mod-it-after-your-needs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Mod it after your needs:
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#change-permissions-so-you-are-allowed-to-execute-your-script" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Change permissions so you are allowed to execute your script:
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#now-run-your-script-by" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Now run your script by:
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#and-at-same-time-in-another-window-start-emagnet-by" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          And at same time in another window start emagnet by.
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#now-go-spend-your-time-on-sensible-things-let-this-setup-be-up-and-running-for-a-while-and-i-can-guarantee-that-you-have-managed-to-hack-some-accounts-if-there-is-no-problems-with-your-own-script-now-youre-a-hacker" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Now go spend your time on sensible things, let this setup be up and running for a while and I can guarantee that you have managed to hack some account(s) if there is no problems with your own script. . Now you're a hacker!
+        </span>
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Now go spend your time on sensible things, let this setup be up and running for a while and I can guarantee that you have managed to hack some account(s) if there is no problems with your own script. . Now you're a hacker!">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#before-every-successful-coder-there-an-even-more-successful-de-coder-to-understand-that-code-the-easier-it-is-the-better-it-is" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        <span class="md-typeset">
+          Before every successful Coder there an even more successful De-coder to understand that code, the easier it is, the better it is. ;)
+        </span>
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+  
+
+
+
+  
+    <a href="https://github.com/edit/main/install/index.md" title="Edit this page" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-2m10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1 2.1 2.1Z"/></svg>
+    </a>
+  
+  
+    
+      
+    
+    <a href="https://github.com/raw/main/install/index.md" title="View source of this page" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 18c.56 0 1 .44 1 1s-.44 1-1 1-1-.44-1-1 .44-1 1-1m0-3c-2.73 0-5.06 1.66-6 4 .94 2.34 3.27 4 6 4s5.06-1.66 6-4c-.94-2.34-3.27-4-6-4m0 6.5a2.5 2.5 0 0 1-2.5-2.5 2.5 2.5 0 0 1 2.5-2.5 2.5 2.5 0 0 1 2.5 2.5 2.5 2.5 0 0 1-2.5 2.5M9.27 20H6V4h7v5h5v4.07c.7.08 1.36.25 2 .49V8l-6-6H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h4.5a8.15 8.15 0 0 1-1.23-2Z"/></svg>
+    </a>
+  
+
+
+<h2 id="install-emagnet-on-windows-10">Install Emagnet on Windows 10<a class="headerlink" href="#install-emagnet-on-windows-10" title="Permanent link">&para;</a></h2>
+<div class="language-text highlight"><pre><span></span><code>  1) Install Ubuntu or any other distro from Microsoft Store
+  2) When installation has been done, hit &#39;start&#39;
+  3) Now type &#39;sudo -s&#39; and enter your password
+  4) Now update repo and install git, just copy and paste the below lines
+
+  apt update; apt install git -y; git clone https://github.com/wuseman/emagnet
+  cd emagnet;chmod +x ./emagnet; ./emagnet --emagnet
+</code></pre></div>
+<p>See video here. <a href="https://nr1.nu/emagnet/pictures/emagnet-on-windows.gif">https://nr1.nu/emagnet/pictures/emagnet-on-windows.gif</a></p>
+<p><em><em>Notice about video:</em></em> ---&gt; You don't need run emagnet-setup anymore, just run emagnet as it is and you're done!</p>
+<h2 id="get-started-on-linux">Get started on Linux;<a class="headerlink" href="#get-started-on-linux" title="Permanent link">&para;</a></h2>
+<h5 id="you-can-copy-and-paste-below-code-in-your-shell">You can copy and paste below code in your shell<a class="headerlink" href="#you-can-copy-and-paste-below-code-in-your-shell" title="Permanent link">&para;</a></h5>
+<div class="language-text highlight"><pre><span></span><code>git clone https://github.com/wuseman/EMAGNET
+cd EMAGNET;bash emagnet --emagnet
+</code></pre></div>
+<h2 id="get-started-on-macosx">GET STARTED ON MACOSX<a class="headerlink" href="#get-started-on-macosx" title="Permanent link">&para;</a></h2>
+<h5 id="you-can-copy-and-paste-below-code-in-your-shell_1">You can copy and paste below code in your shell<a class="headerlink" href="#you-can-copy-and-paste-below-code-in-your-shell_1" title="Permanent link">&para;</a></h5>
+<div class="language-text highlight"><pre><span></span><code>export NUMCPUS=$(nproc)
+export NUMCPUSPLUSONE=$(( NUMCPUS + 1 ))
+export MAKEOPTS=&quot;-j${NUMCPUSPLUSONE} -l${NUMCPUS}&quot;
+wget -P /tmp http://ftp.gnu.org/gnu/sed/sed-4.8.tar.gz
+cd /tmp &amp;&amp; tar -xf sed-4.8.tar.gz
+cd sed-4.8
+ ./configure --prefix=/usr/ --program-suffix=-gnu
+make --jobs=${NUMCPUSPLUSONE} --load-average=${NUMCPUS}
+make install
+mv /usr/bin/sed /usr/bin/sed-bsd
+mv /usr/bin/sed /usr/bin/sed-bsd
+ln -s /usr/bin/sed-gnu /usr/bin/sed
+git clone https://github.com/wuseman/EMAGNET
+cd EMAGNET;bash emagnet --emagnet
+</code></pre></div>
+<h2 id="get-started-on-android">GET STARTED ON ANDROID:<a class="headerlink" href="#get-started-on-android" title="Permanent link">&para;</a></h2>
+<p><a href="https://nr1.nu/emagnet/pictures/android-emagnet.gif">Click here for see a tutorial video how-to get started on android</a></p>
+<div class="language-text highlight"><pre><span></span><code>echo -e &#39;
+pkg update
+pkg upgrade -y
+pkg install wget curl git -y
+git clone https://github.com/wuseman/emagnet
+
+ cd emagnet
+ bash emagnet --emagnet&#39; &gt; emagnet-termux.sh
+ bash emagnet-termux.sh
+</code></pre></div>
+<h2 id="getting-started-with-emagnet-spam-its-not-a-spamming-feature-just-baptized-it-that-way">Getting started with emagnet 'spam' - (It's not a spamming feature - Just baptized it that way)<a class="headerlink" href="#getting-started-with-emagnet-spam-its-not-a-spamming-feature-just-baptized-it-that-way" title="Permanent link">&para;</a></h2>
+<blockquote>
+<p>Uhm, so why is this added to a brute tool and who is it for then?</p>
+</blockquote>
+<ul>
+<li>If you run a business and want to get your spam out to people fast and easy.</li>
+<li>If you're an idiot that spreading nigeria letters, you can use this feature for spreading your shit</li>
+<li>If you just want to get your commercial out to new people</li>
+</ul>
+<h3 id="how-to-get-started">How to get started:<a class="headerlink" href="#how-to-get-started" title="Permanent link">&para;</a></h3>
+<ul>
+<li>You must install ssmtp before you can use this. </li>
+</ul>
+<h4 id="gentoo">Gentoo<a class="headerlink" href="#gentoo" title="Permanent link">&para;</a></h4>
+<div class="language-text highlight"><pre><span></span><code>emerge --ask ssmtp
+</code></pre></div>
+<h4 id="debianubuntukalimint-and-other-apt-distros">Debian/Ubuntu/Kali/Mint and other apt distros:<a class="headerlink" href="#debianubuntukalimint-and-other-apt-distros" title="Permanent link">&para;</a></h4>
+<div class="language-text highlight"><pre><span></span><code>apt install ssmtp
+</code></pre></div>
+<p>Once installed, edit the values for your setup and copy and paste into a terminal and that's it!</p>
+<h4 id="let-me-show-you-an-example-for-gmail">Let me show you an example for gmail:<a class="headerlink" href="#let-me-show-you-an-example-for-gmail" title="Permanent link">&para;</a></h4>
+<div class="language-text highlight"><pre><span></span><code>cat &lt; &quot;EOF&quot; &gt; /etc/ssmtp/ssmtp.conf
+  user=&quot;Wuzeman Emagnetzon&quot;
+  mailhub=smtp.gmail.com:587
+  rewriteDomain=gmail.com
+  # hostname=yourlocalhost.yourlocaldomain.tld
+  TLS_CA_FILE=/etc/pki/tls/certs/ca-bundle.crt
+  UseTLS=Yes
+  UseSTARTTLS=Yes
+  AuthUser=your_email@gmail.com
+  AuthPass=&lt;password&gt;
+  AuthMethod=LOGIN
+  FromLineOverride=yes
+EOF
+</code></pre></div>
+<p>Now run emagnet until you have some email addresses:</p>
+<div class="language-text highlight"><pre><span></span><code>  ./emagnet -e
+</code></pre></div>
+<p>And then, just run: </p>
+<div class="language-text highlight"><pre><span></span><code>  ./emagnet -s
+</code></pre></div>
+<p>You will now see how many email addresses you will send your email to, if you say yes then you going to send your email. So simple! </p>
+<div class="language-text highlight"><pre><span></span><code>       _                      _______                      _
+    _dMMMb._              .adOOOOOOOOOba.              _,dMMMb_
+   dP&#39;  ~YMMb            dOOOOOOOOOOOOOOOb            aMMP~  `Yb
+   V      ~&quot;Mb          dOOOOOOOOOOOOOOOOOb          dM&quot;~      V
+            `Mb.       dOOOOOOOOOOOOOOOOOOOb       ,dM&#39;
+             `YMb._   |OOOOOOOOOOOOOOOOOOOOO|   _,dMP&#39;
+        __     `YMMM| OP&#39;~&quot;YOOOOOOOOOOOP&quot;~`YO |MMMP&#39;     __
+      ,dMMMb.     ~~&#39; OO     `YOOOOOP&#39;     OO `~~     ,dMMMb.
+   _,dP~  `YMba_      OOb      `OOO&#39;      dOO      _aMMP&#39;  ~Yb._
+               `YMMMM\`OOOo     OOO     oOOO&#39;/MMMMP&#39;
+       ,aa.     `~YMMb `OOOb._,dOOOb._,dOOO&#39;dMMP~&#39;       ,aa.
+     ,dMYYMba._         `OOOOOOOOOOOOOOOOO&#39;          _,adMYYMb.
+    ,MP&#39;   `YMMba._      OOOOOOOOOOOOOOOOO       _,adMMP&#39;   `YM.
+    MP&#39;        ~YMMMba._ YOOOOPVVVVVYOOOOP  _,adMMMMP~       `YM
+    YMb           ~YMMMM\`OOOOI`````IOOOOO&#39;/MMMMP~           dMP
+     `Mb.           `YMMMb`OOOI,,,,,IOOOO&#39;dMMMP&#39;           ,dM&#39;
+       `&#39;                  `OObNNNNNdOO&#39;                   `&#39;
+                             `~OOOOO~&#39;
+
+  =================================================================
+
+                           Targets: 8
+
+  - Do you want to send an email to all targets (yes/NO): yes
+
+  ===============================================================
+  [+] Sending email to email1@gmail.com....................[.ok.]
+  [+] Sending email to email2@gmail.com....................[.ok.]
+  [+] Sending email to email3@gmail.com....................[.ok.]
+  [+] Sending email to email4@gmail.com....................[.ok.]
+  [+] Sending email to email5@gmail.com....................[.ok.]
+  [+] Sending email to email6@gmail.com....................[.ok.]
+  [+] Sending email to email7@gmail.com....................[.ok.]
+  [+] Sending email to email8@gmail.com....................[.ok.]
+  ........... and so on
+</code></pre></div>
+<h2 id="how-to-get-started-with-brute-forcer-for-spotify">How to get started with brute forcer for spotify:<a class="headerlink" href="#how-to-get-started-with-brute-forcer-for-spotify" title="Permanent link">&para;</a></h2>
+<h4 id="on-gnulinux-gentoo-wich-is-the-supported-distro-for-emagnet-just-do-as-following">On GNU/Linux Gentoo wich is the supported distro for emagnet, just do as following:<a class="headerlink" href="#on-gnulinux-gentoo-wich-is-the-supported-distro-for-emagnet-just-do-as-following" title="Permanent link">&para;</a></h4>
+<div class="language-text highlight"><pre><span></span><code>  emerge --ask eselect-repository
+  eselect repository enable palmer
+  eix-sync;eix-update
+  emerge --ask =dev-libs/libspotify-12.1.51
+  emerge --ask media-libs/portaudio
+</code></pre></div>
+<ul>
+<li>
+<p>Now you are ready to brute force spotify accounts:</p>
+<p>bash emagnet --bruteforce spotify</p>
+</li>
+</ul>
+<h4 id="on-ubuntukalidebian">On Ubuntu/Kali/Debian:<a class="headerlink" href="#on-ubuntukalidebian" title="Permanent link">&para;</a></h4>
+<div class="language-text highlight"><pre><span></span><code>  wget -q -O - https://apt.mopidy.com/mopidy.gpg | sudo apt-key add -
+  wget -q -O /etc/apt/sources.list.d/mopidy.list https://apt.mopidy.com/stretch.list
+  sudo apt-get update
+  sudo apt-get install libspotify12 libspotify-dev libportaudio
+</code></pre></div>
+<ul>
+<li>
+<p>Now you are ready to brute force spotify accounts:</p>
+<p>bash emagnet --bruteforce spotify</p>
+</li>
+</ul>
+<h1 id="how-to-get-vpn-running-with-emagnet">How to get VPN running with emagnet..<a class="headerlink" href="#how-to-get-vpn-running-with-emagnet" title="Permanent link">&para;</a></h1>
+<ul>
+<li>
+<p>Create a folder in /etc/openvpn with your providers name, for example hidemyass:</p>
+<p>mkdir -p /etc/openvpn/hidemyass</p>
+</li>
+<li>
+<p>Download the configuration files from the providers homepage and unzip them in above folder. </p>
+</li>
+<li>
+<p>And here is a overview how it should look alike to have vpn working (don't forget to set provider and vpn to true)</p>
+<p>CountryCode               Name Your Files As Below For Get VPN Running:
+   ........................................................................
+   be = belgium              /etc/openvpn/vpnprovider/vpnprovider.be.ovpn
+   bg = bulgaria             /etc/openvpn/vpnprovider/vpnprovider.bg.ovpn
+   cz = czech republic       /etc/openvpn/vpnprovider/vpnprovider.cz.ovpn
+   dk = denmark              /etc/openvpn/vpnprovider/vpnprovider.dk.ovpn
+   es = spain                /etc/openvpn/vpnprovider/vpnprovider.es.ovpn
+   fi = finland              /etc/openvpn/vpnprovider/vpnprovider.fi.ovpn
+   gb = great britain        /etc/openvpn/vpnprovider/vpnprovider.gb.ovpn
+   gr = greece               /etc/openvpn/vpnprovider/vpnprovider.gr.ovpn
+   hk = hong-kong (.ch)      /etc/openvpn/vpnprovider/vpnprovider.hk.ovpn
+   hu = hungary              /etc/openvpn/vpnprovider/vpnprovider.hu.ovpn
+   it = italy                /etc/openvpn/vpnprovider/vpnprovider.it.ovpn
+   md = moldavia             /etc/openvpn/vpnprovider/vpnprovider.md.ovpn
+   nl = netherlands          /etc/openvpn/vpnprovider/vpnprovider.nl.ovpn
+   no = norway               /etc/openvpn/vpnprovider/vpnprovider.no.ovpn
+   pl = poland               /etc/openvpn/vpnprovider/vpnprovider.pl.ovpn 
+   pt = portugal             /etc/openvpn/vpnprovider/vpnprovider.pt.ovpn
+   ro = romania              /etc/openvpn/vpnprovider/vpnprovider.ro.ovpn
+   se = sweden config nr 1   /etc/openvpn/vpnprovider/vpnprovider.se.ovpn
+   se2 = sweden config nr 2  /etc/openvpn/vpnprovider/vpnprovider.se2.ovpn
+   se3 = sweden config nr 3  /etc/openvpn/vpnprovider/vpnprovider.se3.ovpn
+   se4 = sweden config nr 4  /etc/openvpn/vpnprovider/vpnprovider.se4.ovpn
+   us = united states        /etc/openvpn/vpnprovider/vpnprovider.us.ovpn</p>
+</li>
+<li>
+<p>And of course, if this is a new setup then don't forget to add your login file if necessary: </p>
+<p>for files in ./etc/openvpn/proivder/*; do sed -i 's/auth-user-pass/auth-user-pass login.txt/g' "${files}"; done</p>
+</li>
+</ul>
+<p>See VPNCOUNTRYS in emagnet.conf for what countries is available as default and how emagnet reading the files. 
+You can of course edit the countrys to anything else but feel free to get it working on your own then.</p>
+<p>If you have two providers or even three as I do, just do exactly as above then but edit VPNPROVIDER2 and 3 for your other provider and same with countries name them after VPNCOUNTRYS2 and 3. Now you can scrape pastebin every second if you want since you will change ip asap you have been banned but please don't do that. Use it with common sense.</p>
+<h1 id="a-quick-sample-script-for-getting-started-with-a-script-running-beside-emagnet">A quick sample script for getting started with a script running beside emagnet:<a class="headerlink" href="#a-quick-sample-script-for-getting-started-with-a-script-running-beside-emagnet" title="Permanent link">&para;</a></h1>
+<h5 id="mod-it-after-your-needs">Mod it after your needs:<a class="headerlink" href="#mod-it-after-your-needs" title="Permanent link">&para;</a></h5>
+<div class="language-text highlight"><pre><span></span><code>cat &gt; my-bruteforce-tool.sh &lt;&lt;EOF
+
+#!/bin/bash                               
+# inotify-tools is required for this sample
+
+# Where emagnet.conf is stored so you can read folders
+. /path/to/emagnet.conf
+
+# Where to place email + passwords we have found wich will be our target
+HYDRA_TARGETS=&quot;/tmp/.emagnet-hydra-targets.txt&quot;
+
+# When something happens in emagnet&#39;s temp folder  
+# then search for email+password combos and if something is found
+# then your command will be triggered and attack the targets.
+while inotifywait -e modify &quot;${EMAGNETTEMP}&quot;; do
+PASTEBIN_TARGETS=$(grep -rEiEio &quot;\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,6}\b:...*&quot; &quot;${EMAGNETTEMP}&quot;|awk &#39;{print $1}&#39;| \
+     cut -d: -f2,3|uniq|grep -v &#39;&#39;\|&#39;/&#39;\|&#39;&quot;&#39;\|&#39;,&#39;\|&#39;&lt;&#39;\|&#39;&gt;&#39;\|&#39;\/&#39;\|&#39;\\&#39;|grep -v &#39;/&#39; &gt; &quot;${HYDRA_TARGETS}&quot;)
+
+    # If the target file is empty, then we monitor the dir again
+    # until emagnet download new files otherwise use the prefered tool and attack your targets 
+      if [[ -s &quot;${HYDRA_TARGETS}&quot; ]]; then
+         &lt;add your hydra or prefered tool here&gt;
+      fi
+ done
+EOF
+</code></pre></div>
+<h4 id="change-permissions-so-you-are-allowed-to-execute-your-script">Change permissions so you are allowed to execute your script:<a class="headerlink" href="#change-permissions-so-you-are-allowed-to-execute-your-script" title="Permanent link">&para;</a></h4>
+<div class="language-text highlight"><pre><span></span><code>chmod +x my-bruteforce-tool.sh
+</code></pre></div>
+<h4 id="now-run-your-script-by">Now run your script by:<a class="headerlink" href="#now-run-your-script-by" title="Permanent link">&para;</a></h4>
+<div class="language-text highlight"><pre><span></span><code>./my-bruteforce-tool.sh
+</code></pre></div>
+<h4 id="and-at-same-time-in-another-window-start-emagnet-by">And at same time in another window start emagnet by.<a class="headerlink" href="#and-at-same-time-in-another-window-start-emagnet-by" title="Permanent link">&para;</a></h4>
+<div class="language-text highlight"><pre><span></span><code>./emagnet --emagnet
+</code></pre></div>
+<h4 id="now-go-spend-your-time-on-sensible-things-let-this-setup-be-up-and-running-for-a-while-and-i-can-guarantee-that-you-have-managed-to-hack-some-accounts-if-there-is-no-problems-with-your-own-script-now-youre-a-hacker">Now go spend your time on sensible things, let this setup be up and running for a while and I can guarantee that you have managed to hack some account(s) if there is no problems with your own script. . Now you're a hacker!<a class="headerlink" href="#now-go-spend-your-time-on-sensible-things-let-this-setup-be-up-and-running-for-a-while-and-i-can-guarantee-that-you-have-managed-to-hack-some-accounts-if-there-is-no-problems-with-your-own-script-now-youre-a-hacker" title="Permanent link">&para;</a></h4>
+<h5 id="before-every-successful-coder-there-an-even-more-successful-de-coder-to-understand-that-code-the-easier-it-is-the-better-it-is">Before every successful Coder there an even more successful De-coder to understand that code, the easier it is, the better it is. ;)<a class="headerlink" href="#before-every-successful-coder-there-an-even-more-successful-de-coder-to-understand-that-code-the-easier-it-is-the-better-it-is" title="Permanent link">&para;</a></h5>
+
+  
+    
+  
+  
+    
+  
+
+
+  <aside class="md-source-file">
+    
+      <span class="md-source-file__fact">
+        <span class="md-icon" title="Last update">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
+        </span>
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2023-04-30T21:11:06+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2023-04-30</span>
+      </span>
+    
+    
+      <span class="md-source-file__fact">
+        <span class="md-icon" title="Created">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.47 15.08 11 13V7h1.5v5.25l3.08 1.83c-.41.28-.79.62-1.11 1m-1.39 4.84c-.36.05-.71.08-1.08.08-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8c0 .37-.03.72-.08 1.08.69.1 1.33.32 1.92.64.1-.56.16-1.13.16-1.72 0-5.5-4.5-10-10-10S2 6.5 2 12s4.47 10 10 10c.59 0 1.16-.06 1.72-.16-.32-.59-.54-1.23-.64-1.92M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3h-2Z"/></svg>
+        </span>
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2023-04-30T21:11:06+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2023-04-30</span>
+      </span>
+    
+    
+    
+  </aside>
+
+
+  
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var tab,labels=set.querySelector(".tabbed-labels");for(tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <a href="#" class="md-top md-icon" data-md-component="top" hidden>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+            Back to top
+          </a>
+        
+      </main>
+      
+<footer class="md-footer">
+    <div class="md-footer-meta md-typeset">
+        <div class="md-footer-meta__inner md-grid">
+            <!-- Copyright and theme information -->
+            <div class="md-footer-copyright">
+                
+                <div class="md-footer-copyright__highlight">
+                    Copyright &copy; 2015 - 2023 Emagnet Devs. - All rights reserved
+                </div>
+                
+            </div>
+            
+            <div class="md-social">
+  
+</div>
+            
+        </div>
+    </div>
+</footer>
+
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["announce.dismiss", "content.action.edit", "content.action.view", "content.code.annotate", "content.code.copy", "content.code.select", "content.tabs.link", "content.tooltips", "navigation.footer", "navigation.indexes", "navigation.tabs", "navigation.top", "search.highlight", "search.share", "search.suggest", "toc.follow"], "search": "../assets/javascripts/workers/search.6c7302c4.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": "v1.0"}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.7ce0e818.min.js"></script>
+      
+        <script src="../js/timeago.min.js"></script>
+      
+        <script src="../js/timeago_mkdocs_material.js"></script>
+      
+    
+  </body>
+</html>
