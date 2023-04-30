@@ -56,12 +56,7 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://emagnet.nr1.nu/blog/category/breaches/</loc>
-         <lastmod>2023-04-30</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://emagnet.nr1.nu/blog/category/automated/</loc>
+         <loc>https://emagnet.nr1.nu/blog/category/bruteforce/</loc>
          <lastmod>2023-04-30</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -76,7 +71,12 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://emagnet.nr1.nu/blog/category/bruteforce/</loc>
+         <loc>https://emagnet.nr1.nu/blog/category/breaches/</loc>
+         <lastmod>2023-04-30</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://emagnet.nr1.nu/blog/category/automated/</loc>
          <lastmod>2023-04-30</lastmod>
          <changefreq>daily</changefreq>
     </url>
