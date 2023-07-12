@@ -394,9 +394,27 @@ emagnet_optional() {
 }
 
 emagnet_paths() {
-    [[ ! -d ${EMAGNETALL} ]] &&
-        PATHS="${EMAGNETHOME} ${EMAGNETCRACKED} ${EMAGNETDB} ${EMAGNETPW} ${EMAGNETTEMP} ${EMAGNETCRAP} ${EMAGNETALL} ${EMAGNETARCHIVE} ${EMAGNETLOGS}"
-    for DIRS in ${PATHS}; do [[ ! -d "${DIRS}" ]] && mkdir -p "${DIRS}" &>/dev/null; done
+    # Check if EMAGNETALL directory exists
+    if [[ ! -d "${EMAGNETALL}" ]]; then
+        PATHS=(
+            "${EMAGNETHOME}"
+            "${EMAGNETCRACKED}"
+            "${EMAGNETDB}"
+            "${EMAGNETPW}"
+            "${EMAGNETTEMP}"
+            "${EMAGNETCRAP}"
+            "${EMAGNETALL}"
+            "${EMAGNETARCHIVE}"
+            "${EMAGNETLOGS}"
+        )
+
+        # Create missing directories
+        for DIR in "${PATHS[@]}"; do
+            if [[ ! -d "${DIR}" ]]; then
+                mkdir -p "${DIR}" &>/dev/null
+            fi
+        done
+    fi
 }
 
 emagnet_screen() {
