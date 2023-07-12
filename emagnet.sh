@@ -383,9 +383,8 @@ emagnet_clear() {
 }
 
 emagnet_iconnection() {
-    ping -i "1" -c 1 google.com &>/dev/null
-    if [[ "$?" -gt "0" ]]; then
-        echo -e "$basename$0: internal error -- this feature require a internet connection but you seems to be offline, exiting.."
+    if ! ping -i 1 -c 1 google.com &>/dev/null && ! ping -i 1 -c 1 1.1.1.1 &>/dev/null; then
+        echo "$(basename "$0"): Internal error - This feature requires an internet connection, but you appear to be offline. Exiting..."
         exit 1
     fi
 }
