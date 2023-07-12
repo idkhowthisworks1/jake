@@ -474,10 +474,10 @@ emagnet_analyzing_message() {
     fi
     text="Analyzing..."
     delay="0.1"
-    printf "%26s"
-    for analyzing in $(seq 0 $(expr length "${text}")); do
+    printf "%26s" "$text"
+    for analyzing in $(seq 0 "${#text}"); do
         echo -n "${text:$analyzing:1}"
-        sleep "${delay}"
+        sleep "$delay"
     done
 }
 
