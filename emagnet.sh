@@ -439,7 +439,9 @@ emagnet_kill() {
     if [[ "$INSCREEN" -gt "0" ]]; then
         for screens in "$INSCREEN"; do
             screen -X -S "$screens" kill
-            [[ "$?" = "0" ]] && echo -e "[\e[1;31m<<\e[0m] - $NRINSCREEN emagnet screens has been killed\n"
+            if [[ $? == 0 ]]; then
+                echo -e "[\e[1;31m<<\e[0m] - $NRINSCREEN emagnet screens have been killed\n"
+            fi
         done
     fi
 
