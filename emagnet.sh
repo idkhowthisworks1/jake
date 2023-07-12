@@ -394,7 +394,6 @@ emagnet_optional() {
 }
 
 emagnet_paths() {
-    # Check if EMAGNETALL directory exists
     if [[ ! -d "${EMAGNETALL}" ]]; then
         PATHS=(
             "${EMAGNETHOME}"
@@ -408,7 +407,6 @@ emagnet_paths() {
             "${EMAGNETLOGS}"
         )
 
-        # Create missing directories
         for DIR in "${PATHS[@]}"; do
             if [[ ! -d "${DIR}" ]]; then
                 mkdir -p "${DIR}" &>/dev/null
@@ -421,14 +419,15 @@ emagnet_screen() {
     mkdir -p /tmp/screen/S-root &>/dev/null
     chmod 755 /tmp/screen &>/dev/null
     chmod -R 700 /tmp/screen/S-root &>/dev/null
-    hash screen &>/dev/null
-    if [[ "$?" -gt "0" ]]; then
-        echo -e "$basename$0: internal error -- Screen is required to be installed before you can run emagnet in screen..."
+
+    if ! hash screen &>/dev/null; then
+        echo "$(basename "$0"): Internal error -- Screen is required to be installed before you can run emagnet in screen..."
         exit 1
     fi
-    pid="$(ps aux | grep emagnet)"
-    printf "$basename$0: emagnet has been started in background (pid:$(ps aux | grep "SCREEN -dmS emagnet" | awk '{print $2}' | head -n1))\n"
-    screen -S "emagnet" -dm bash "$basename$0" --emagnet
+
+    pid=$(pgrep emagnet)
+    printf "%s: emagnet has been started in the background (pid: %s)\n" "$(basename "$0")" "$(pgrep -f 'SCREEN -dmS emagnet')"
+    screen -S "emagnet" -dm bash "$0" --emagnet
 }
 
 emagnet_kill() {
