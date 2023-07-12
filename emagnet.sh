@@ -431,10 +431,10 @@ emagnet_screen() {
 }
 
 emagnet_kill() {
-    ESESSIONS=$(ps aux | grep -i emagnet | awk '{print $2}' | sed '$d')
-    NRESESSIONS=$(ps aux | grep -i "emagnet" | awk '{print $2}' | sed '$d' | wc -l)
-    NRINSCREEN="$(screen -ls | grep emagnet | awk -F"." '{print $1}' | sed 's/\t//g' | wc -l)"
-    INSCREEN="$(screen -ls | grep emagnet | awk -F"." '{print $1}' | sed 's/\t//g')"
+    ESESSIONS=$(pgrep -f 'emagnet' | sed '$d')
+    NRESESSIONS=$(pgrep -f 'emagnet' | sed '$d' | wc -l)
+    NRINSCREEN=$(screen -ls | grep 'emagnet' | awk -F"." '{print $1}' | sed 's/\t//g' | wc -l)
+    INSCREEN=$(screen -ls | grep 'emagnet' | awk -F"." '{print $1}' | sed 's/\t//g')
 
     if [[ "$INSCREEN" -gt "0" ]]; then
         for screens in "$INSCREEN"; do
