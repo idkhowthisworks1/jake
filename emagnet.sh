@@ -446,10 +446,10 @@ emagnet_kill() {
     fi
 
     if [[ "$NRESESSIONS" -lt "3" ]]; then
-        echo -e "$basename$0: internal error -- 0 emagnet sessions is currently running"
+        echo -e "$(basename "$0"): Internal error -- 0 emagnet sessions are currently running"
     else
-        echo -e "$basename$0: killed $(echo $NRESESSIONS-2 | bc) emagnet sessions"
-        kill -9 $ESESSIONS &>/dev/null
+        echo -e "$(basename "$0"): Killed $(echo "$NRESESSIONS"-2 | bc) emagnet sessions"
+        kill -9 "$ESESSIONS" &>/dev/null
     fi
 }
 
