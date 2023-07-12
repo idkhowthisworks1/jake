@@ -83,13 +83,6 @@ emagnet_mustberoot() {
     fi
 }
 
-emagnet_license() {
-    printf "%s\n" "Printing LICENSE - Use 'q' to quit"
-    sleep 2
-    curl -sL "https://raw.githubusercontent.com/wuseman/EMAGNET/master/LICENSE.md" | less
-    printf "%s\n" "Thank you.."
-}
-
 emagnet_required_stuff() {
     if ! [[ -d "$HOME/.config/emagnet/" ]]; then
         mkdir -p "$HOME/.config/emagnet/tmp"
@@ -370,7 +363,6 @@ Usage: ./$basename$0 [--author] [--emagnet] [--option] .....
   -b, --backup        Create a compressed archive
                       - Available options: all/archive/incoming
   -d, --stats         Count total passwords, mail addresses and how many files you downloaded 
-  -l, --license       Show license information
   -h, --help          Display this very helpful text
   -t, --time          Set refresh time in seconds
   -V, --version       Displays version information.
