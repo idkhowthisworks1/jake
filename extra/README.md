@@ -8,6 +8,18 @@ This directory has been created as a temporary space for testing various options
 
 The primary goal of this temporary extra directory is to gather valuable insights and feedback from users like you. After a few years of inactivity, I am planning to work on a new version, and this directory will be used for that purpose. You are welcome to try out everything that will be available here, but please note that it is intended for testing purposes only, specifically for upstream development. I have chosen not to create a new branch as I believe this approach makes it easier for me to experiment with different ideas.
 
+## SpotifyBruter
+
+Fully working, but you need to fix the requirements yourself, and that is something that won't be addressed because this is intended for fully automated use in emagnet
+
+```bash
+### Don't exaggerate as it may cause the program to crash, as shown in the video.
+
+./spotifyBruter.sh --wordlist (combolist) --parallel <cores + 1 is optimal>
+```
+
+https://github.com/wuseman/EMAGNET/assets/26827453/0a749e45-93f1-4ace-90f9-1bdcef1c1924
+
 ## Guidelines
 
 To ensure a productive and efficient testing process, please adhere to the following guidelines:
