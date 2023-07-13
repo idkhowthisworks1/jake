@@ -124,5 +124,39 @@ display_usage() {
     echo "."
 }
 
+if [[ $# -eq 0 ]]; then
+	display_usage
+	exit 1
+fi
+
+while [[ $# -gt 0 ]]; do
+	key="$1"
+
+	case $key in
+	-e | --emagnet)
+
+		#emagnetMain
+		;;
+	-t | --time)
+		if [[ -z $2 ]]; then
+			echo "Please provide a time value in minutes."
+			exit 1
+		fi
+		minutes="$2"
+		echo "....running next session in $seconds minute(s)..."
+
+		;;
+	-c | --convert)
+		#curl2wget2
+		;;
+	*)
+		echo "Unknown option: $key"
+		display_usage
+		exit 1
+		;;
+	esac
+
+	shift
+done
 
 
