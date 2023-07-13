@@ -65,3 +65,39 @@ emagnetRequirements() {
 		fi
 	done
 }
+
+emagnetStealerRequirements() {
+	for tools in unzip unrar parallel rga grep; do
+		command -v "$tools" >/dev/null 2>&1
+		if [ $? -ne 0 ]; then
+			printf "%s: internal error -- \e[1;4m%s\e[0m is required to be installed\n" "$0" "$tools"
+			exit 1
+		fi
+	done
+}
+
+display_usage() {
+    echo "Usage: ./$0 [options]"
+    echo "Options:"
+    echo "  -e, --emagnet           : Run emagnet once and stop"
+    echo "  -t, --time              : Run emagnet every X minute"
+    echo "  -c, --convert           : Convert a curl command to wget2 and start mirroring"
+    echo "  -x, --extract           : Extract specific data from stealer dir"
+    echo "                            Valid options: passwords, wallets, cookies, screenshots, autofills, all"
+    echo "  -p, --parallel <value>  : Extract with specified number of parallel cores (default: number of CPU cores)"
+    echo "  -l, --list              : Extract specific data from stealer dir"
+    echo "                            Valid options: passwords, wallets, cookies, screenshots, autofills, all"
+    echo "  --test                  : Test archive files"
+    echo ""
+    echo "Example:"
+    echo "  ./$0 -t 5               : Run emagnet every 5 minutes"
+    echo "  ./$0 -c                 : Convert curl command to wget2 and start mirroring"
+    echo "                            Note: For more information, see the video in the README (to be added)"
+    echo "                            - Copy and paste the web source URL from your browser"
+    echo "                              to initiate the download of all files when you are logged in"
+    echo ""
+    echo "."
+}
+
+
+
