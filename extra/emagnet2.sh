@@ -171,7 +171,53 @@ emagnetGet() {
 
 emagnetMain() {
 	emagnetGet
+# rg -Nc "\b[A-Za-z0-9._%+-]+@.*" $emagnetIncomingTemp|| awk -F: '{sum += $2} END {print sum}'
+# rg '\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,6}\b:.....*' "$emagnetIncomingTemp/" >"$emagnetIncomingLog"
+# logins=$(rg '\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,6}\b:.....*' $emagnetIncomingTemp/ | wc -l)
+    if [[ -s $tempFile1 ]]; then
+        echo -ne "Nothing to download...\033[0K\r"
+        sleep 2
+        echo -ne "\033[0K\r"
+        exit 0
+    fi
 
+    count=$(cat $tempFile3 | wc -l)
+    logins=$(rg -c "\b[A-Za-z0-9._%+-]+@.*" $emagnetIncomingTemp | awk -F: '{sum += $2} END {print sum}')
+
+    variations=(
+        "Retribution: ${count} files reclaimed, ${logins} logins captured, Nr1 dominating in ${duration}s.\033[0K\r"
+        "The ultimate hack: ${count} files seized, ${logins} logins controlled, proving Nr1 status in ${duration}s.\033[0K\r"
+        "Digital justice served: ${count} files recovered, ${logins} logins reclaimed, Nr1 in ${duration}s.\033[0K\r"
+        "Hackers meet their match: ${count} files intercepted, ${logins} logins compromised, Nr1 strikes in ${duration}s.\033[0K\r"
+        "Stealing from stealers: ${count} files reclaimed, ${logins} logins captured, Nr1 supremacy in ${duration}s.\033[0K\r"
+        "Masters of the hack: ${count} files controlled, ${logins} logins at command, Nr1 domination in ${duration}s.\033[0K\r"
+        "Hacking hackers: ${count} files infiltrated, ${logins} logins compromised, Nr1 reigns in ${duration}s.\033[0K\r"
+        "Digital dominators: ${count} files conquered, ${logins} logins mastered, Nr1 proving supremacy in ${duration}s.\033[0K\r"
+        "Emagnet's reign: ${count} files seized, ${logins} logins captured, Nr1's authority in ${duration}s.\033[0K\r"
+        "Defying hackers: ${count} files reclaimed, ${logins} logins controlled, Nr1 showcasing skills in ${duration}s.\033[0K\r"
+    )
+
+    for ((i = ${#variations[@]} - 1; i > 0; i--)); do
+        j=$((RANDOM % (i + 1)))
+        temp=${variations[i]}
+        variations[i]=${variations[j]}
+        variations[j]=$temp
+    done
+
+    selected_variation=${variations[0]}
+    echo -ne "$selected_variation\r"
+
+    mv -v $emagnetIncomingTemp/* $emagnetLoginDaily/
+}
+
+emagnetExtract() {
+echo "N/A"
+## VALID 
+# find /path -type f \( -iname "*.<add>" -o -iname "*.<add>" \) -print0 | xargs -0 $cpuCores -n 1 bash process_file.sh (proccess_file_on_note)
+#-------------------------------
+### SHELL INJECTION !!! 
+###find $stealerSource -type f \( -name "*.<add>" -exec sh -c '<add> -l "{}" "**"' \; \) -o \( -name "*.<add>" -exec sh -c '<add>  "{}" "**"' \; \) | xargs -P $cpuCores -I {} bash -c 'export LC_ALL=C; {}'
+#-------------------------------
 }
 
 if [[ $# -eq 0 ]]; then
