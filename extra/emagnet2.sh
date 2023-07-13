@@ -76,6 +76,32 @@ emagnetStealerRequirements() {
 	done
 }
 
+analyzeMessage() {
+	hackMessages=(
+		"Please wait, infiltrating the system..."
+		"Please wait, decrypting security protocols..."
+		"Please wait, bypassing firewalls..."
+		"Please wait, executing cyber reconnaissance..."
+		"Please wait, cracking encryption codes..."
+		"Please wait, breaching the digital fortress..."
+		"Please wait, mapping network vulnerabilities..."
+		"Please wait, exploiting system weaknesses..."
+		"Please wait, hacking into the mainframe..."
+		"Nothing to download..."
+	)
+
+	for ((i = ${#hackMessages[@]} - 1; i > 0; i--)); do
+		j=$((RANDOM % (i + 1)))
+		temp=${hackMessages[i]}
+		hackMessages[i]=${hackMessages[j]}
+		hackMessages[j]=$temp
+	done
+
+	selected_hackMessages=${hackMessages[0]}
+	echo -ne "$selected_hackMessages\033[0K\r"
+}
+
+
 display_usage() {
     echo "Usage: ./$0 [options]"
     echo "Options:"
