@@ -87,7 +87,6 @@ analyzeMessage() {
 		"Please wait, mapping network vulnerabilities..."
 		"Please wait, exploiting system weaknesses..."
 		"Please wait, hacking into the mainframe..."
-		"Nothing to download..."
 	)
 
 	for ((i = ${#hackMessages[@]} - 1; i > 0; i--)); do
