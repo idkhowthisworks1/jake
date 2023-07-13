@@ -124,6 +124,56 @@ display_usage() {
     echo "."
 }
 
+emagnetGet() {
+
+	tempFile1=$emagnetIncomingTemp/dl-urls.txt
+	tempFile2="$emagnetIncomingTemp/temp-dl-diff2-txt"
+	tempFile3="$emagnetIncomingTemp/temp-dl-diff3-txt"
+
+	analyzeMessage
+	start=$(date +%s.%3N)
+#	fetchSource1() {
+#		wget2 -qO- ........ |
+#			awk 'match($0, /https.*upload.ee\/files.*txt.html/) {
+#          		url = substr($0, RSTART, RLENGTH); gsub(/["<]/, "", url); urls[url]}
+#           		END {for (url in urls) print url}' |
+#			xargs -P5 curl -sL |
+#			grep -o 'd_l.*href="[^"]*"' |
+#			grep -o 'https://[^[:space:]]*' |
+#			cut -d: -d'"' -f1 >$tempFile1
+#
+	#}
+	#fetchSource2() {
+	#	exclude='signup\|login\|archive\|_\|pastebin$\|dmca$\|tools$\|contact$\|languages'
+	#	curl -Ls "https://pastebin.com/archive" |
+	#		awk -F'href="/' '{print $2}' |
+	#		cut -d'"' -f1 |
+	#		awk 'length($0)>6 && length($0)<9' |
+	#		sed 's/^/https:\/\/pastebin.com\/raw\//g' | rg -v $exclude
+	#}
+	#fetchSource4() {
+	# add another source
+	#}
+	#fetchSource5() {
+	# add another source
+	#}
+	#fetchSource6() {
+	# add another source
+	#}
+	#fetchSource7() {
+	# add another source
+	#}
+
+	fetchSource1
+	end=$(date +%s.%3N)
+	duration=$(awk "BEGIN {printf \"%.2f\", ${end} - ${start}}")
+}
+
+emagnetMain() {
+	emagnetGet
+
+}
+
 if [[ $# -eq 0 ]]; then
 	display_usage
 	exit 1
