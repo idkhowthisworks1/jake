@@ -5,7 +5,7 @@
 #   Author: wuseman <wuseman@nr1.nu>
 # FileName: emagnet2.sh
 #  Created: 2023-07-03 (09:40:19)
-# Modified: 2023-07-13 (03:29:08)
+# Modified: 2023-07-13 (09:31:32)
 #  Version: 3.4.4
 #  License: MIT
 #
@@ -30,3 +30,28 @@ crackedAccounts="$emagnetHome/cracked-accounts"
 
 cpuCores="$(($(nproc) + 1))"
 stealerSource=""
+
+emagnet_create_dirs() {
+	declare -A directories=(
+		[emagnetHome]="$HOME/emagnet"
+		[emagnetIncoming]="${emagnetHome}/incoming/"
+		[emagnetIncomingDaily]="${emagnetHome}/incoming/$(date +%Y-%m-%d)"
+		[emagnetIncomingTemp]="${emagnetHome}/incoming/$(date +%Y-%m-%d)/.temp"
+		[passwordDir]="${emagnetHome}/stealer/password-files"
+		[screenshotDir]="${emagnetHome}/stealer/screenshot-files"
+		[cookiesDir]="${emagnetHome}/stealer/cookie-files"
+		[emagnetLoginDaily]="${emagnetHome}/logs/$(date +%Y-%m-%d)"
+		[stealerSource]="/mnt/usb/telegram"
+		[crackedAccounts]="$emagnetHome/cracked-accounts"
+	)
+
+	create_directory() {
+		if [ ! -d "$1" ]; then
+			mkdir -p "$1"
+		fi
+	}
+
+	for dir in "${!directories[@]}"; do
+		create_directory "${directories[$dir]}"
+	done
+}
