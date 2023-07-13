@@ -5,7 +5,7 @@
 #   Author: wuseman <wuseman@nr1.nu>
 # FileName: emagnet2.sh
 #  Created: 2023-07-03 (09:40:19)
-# Modified: 2023-07-13 (09:31:32)
+# Modified: 2023-07-13 (09:53:25)
 #  Version: 3.4.4
 #  License: MIT
 #
@@ -53,5 +53,15 @@ emagnet_create_dirs() {
 
 	for dir in "${!directories[@]}"; do
 		create_directory "${directories[$dir]}"
+	done
+}
+
+emagnetRequirements() {
+	for tools in rg wget elinks grep; do
+		command -v "$tools" >/dev/null 2>&1
+		if [ $? -ne 0 ]; then
+			printf "%s: internal error -- \e[1;4m%s\e[0m is required to be installed\n" "$0" "$tools"
+			exit 1
+		fi
 	done
 }
