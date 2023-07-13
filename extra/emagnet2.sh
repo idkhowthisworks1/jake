@@ -12,7 +12,7 @@
 #      iRC: wuseman (Libera/EFnet/LinkNet)
 #   GitHub: https://github.com/wuseman/
 #
-# ----------------------------------------------
+# ---------------------------------------------
 
 emagnetHome="$HOME/emagnet"
 emagnetIncoming="$emagnetHome/incoming/"
@@ -24,7 +24,7 @@ emagnetLoginDaily="$emagnetHome/logs/$(date +%Y-%m-%d)"
 cookiesDir="$emagnetHome/stealer/cookie-files"
 passwordDir="$emagnetHome/stealer/password-files"
 screenshotDir="$emagnetHome/stealer/screenshot-files"
-walletsDir="$emagnetHome/stealer/wallets-files"
+walletsDir="$emagnetHome/stealer/wallet-files"
 
 crackedAccounts="$emagnetHome/cracked-accounts"
 
@@ -41,6 +41,7 @@ emagnet_create_dirs() {
 		[screenshotDir]="${emagnetHome}/stealer/screenshot-files"
 		[cookiesDir]="${emagnetHome}/stealer/cookie-files"
 		[emagnetLoginDaily]="${emagnetHome}/logs/$(date +%Y-%m-%d)"
+                ### FOlder to be used for send files to group.
 		[stealerSource]="/mnt/usb/telegram"
 		[crackedAccounts]="$emagnetHome/cracked-accounts"
 	)
@@ -57,11 +58,11 @@ emagnet_create_dirs() {
 }
 
 emagnetRequirements() {
-	for tools in rg wget elinks grep; do
+	for tools in rg wget wget2 curl ; do
 		command -v "$tools" >/dev/null 2>&1
 		if [ $? -ne 0 ]; then
 			printf "%s: internal error -- \e[1;4m%s\e[0m is required to be installed\n" "$0" "$tools"
-			exit 1
+			
 		fi
 	done
 }
@@ -206,7 +207,6 @@ emagnetMain() {
 
     selected_variation=${variations[0]}
     echo -ne "$selected_variation\r"
-
     mv -v $emagnetIncomingTemp/* $emagnetLoginDaily/
 }
 
@@ -219,6 +219,56 @@ echo "N/A"
 ###find $stealerSource -type f \( -name "*.<add>" -exec sh -c '<add> -l "{}" "**"' \; \) -o \( -name "*.<add>" -exec sh -c '<add>  "{}" "**"' \; \) | xargs -P $cpuCores -I {} bash -c 'export LC_ALL=C; {}'
 #-------------------------------
 }
+
+emagnetExtract() {
+echo "N/A"
+case $2 in
+   '*ssword*')
+   echo "add handler passwords"
+   ;;
+   '*utofil*')
+    echo "add handler autofills"
+   ;;
+   '*ooki*')
+    echo "add list handler cookies"
+   ;;
+   '*creensho*')
+    echo "add list handler screenshots"
+   ;;
+   ''.dat*|*llet*)
+    echo "add handler crypto wallets"
+    echo "add reverse eng. command for grab balance if possible on stdin"
+    echo "add bruteforce for encrypted wallets IF there is more then 1$"
+   ;;
+esac
+## VALID 
+# find /path -type f \( -iname "*.<add>" -o -iname "*.<add>" \) -print0 | xargs -0 $cpuCores -n 1 bash process_file.sh (proccess_file_on_note)
+#-------------------------------
+### SHELL INJECTION !!! 
+###find $stealerSource -type f \( -name "*.<add>" -exec sh -c '<add> -l "{}" "**"' \; \) -o \( -name "*.<add>" -exec sh -c '<add>  "{}" "**"' \; \) | xargs -P $cpuCores -I {} bash -c 'export LC_ALL=C; {}'
+#-------------------------------
+}
+
+emagnetList() {
+case $2 in
+   '*ssword*')
+   echo "add list passwords"
+   ;;
+   '*utofil*')
+    echo "add list autofills"
+   ;;
+   '*ooki*')
+    echo "add list cookies"
+   ;;
+   '*creensho*')
+    echo "add list screenshots"
+   ;;
+   ''.dat*|*llet*)
+    echo "add list crypto wallets"
+    echo "add reverse eng. command for grab balance if possible on stdin"
+   ;;
+esac
+
 
 if [[ $# -eq 0 ]]; then
 	display_usage
