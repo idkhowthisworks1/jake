@@ -1,5 +1,12 @@
 # Temporary Extra Directory for Testing Purposes
 
+
+### Update 2023-07-15 | Testing new stuff
+
+https://github.com/wuseman/EMAGNET/assets/26827453/61610d2e-9b4b-4ab6-a76b-79e4b2d63d8c
+
+
+
 **Note: Please proceed with caution as usage of this directory is at your own risk.**
 
 This directory has been created as a temporary space for testing various options before implementing them upstream. It serves as an experimental playground where different functionalities, configurations, and potential improvements can be explored.
